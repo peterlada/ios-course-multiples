@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -15,11 +16,96 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chalkboard" translatesAutoresizingMaskIntoConstraints="NO" id="42Z-a8-b5r">
+                                <rect key="frame" x="-150" y="-80" width="900" height="900"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="900" id="M2D-Yw-jKR"/>
+                                    <constraint firstAttribute="height" constant="900" id="tMQ-iB-gJF"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MULTIPLES" translatesAutoresizingMaskIntoConstraints="NO" id="0sO-6y-pyS" userLabel="logoImg">
+                                <rect key="frame" x="180" y="28" width="240" height="79"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="79" id="4yX-zp-5XL"/>
+                                    <constraint firstAttribute="width" constant="240" id="K9l-9M-m56"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uzh-v0-oi1" userLabel="addBtn">
+                                <rect key="frame" x="239" y="418" width="123" height="121"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="121" id="HMr-pf-NSs"/>
+                                    <constraint firstAttribute="width" constant="123" id="ZYw-6A-BsJ"/>
+                                </constraints>
+                                <state key="normal" image="play"/>
+                                <connections>
+                                    <action selector="doPlay:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j6v-rr-g7b"/>
+                                </connections>
+                            </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lRX-L8-AAP" userLabel="additionLbl">
+                                <rect key="frame" x="140" y="115" width="320" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="Vxd-wU-u21"/>
+                                    <constraint firstAttribute="height" constant="45" id="p2h-IG-TBA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Start adding up a number 1-99" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8ZO-9h-Nh4" userLabel="numberTxt">
+                                <rect key="frame" x="150" y="358" width="300" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="bpk-E0-FlR"/>
+                                    <constraint firstAttribute="width" constant="300" id="ntS-So-dE7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="67S-1X-4Ak" userLabel="playBtn">
+                                <rect key="frame" x="195" y="438" width="211" height="101"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="101" id="4DO-Ok-sC8"/>
+                                    <constraint firstAttribute="width" constant="211" id="Gle-mW-BqX"/>
+                                </constraints>
+                                <state key="normal" image="add"/>
+                                <connections>
+                                    <action selector="doAdd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DrO-kq-zYz"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0sO-6y-pyS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2He-jc-4BV"/>
+                            <constraint firstItem="lRX-L8-AAP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BfA-C1-ljc"/>
+                            <constraint firstItem="uzh-v0-oi1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Jse-Xh-48V"/>
+                            <constraint firstItem="67S-1X-4Ak" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="M2k-Ri-OZG"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="uzh-v0-oi1" secondAttribute="bottom" constant="61" id="OAr-Um-aWV"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="67S-1X-4Ak" secondAttribute="bottom" constant="61" id="XDM-ks-6xi"/>
+                            <constraint firstItem="42Z-a8-b5r" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-80" id="YGm-GM-IAn"/>
+                            <constraint firstItem="8ZO-9h-Nh4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bgx-hm-3W9"/>
+                            <constraint firstItem="0sO-6y-pyS" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="ms9-xg-PmV"/>
+                            <constraint firstItem="uzh-v0-oi1" firstAttribute="top" secondItem="8ZO-9h-Nh4" secondAttribute="bottom" constant="15" id="oz2-dS-kMS"/>
+                            <constraint firstItem="lRX-L8-AAP" firstAttribute="top" secondItem="0sO-6y-pyS" secondAttribute="bottom" constant="8" id="qar-yx-179"/>
+                            <constraint firstItem="42Z-a8-b5r" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rkU-1U-8g1"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addBtn" destination="67S-1X-4Ak" id="gxo-jf-sEI"/>
+                        <outlet property="additionLbl" destination="lRX-L8-AAP" id="0Zz-qg-oyE"/>
+                        <outlet property="logoImg" destination="0sO-6y-pyS" id="zGN-Xu-g0Z"/>
+                        <outlet property="numberTxt" destination="8ZO-9h-Nh4" id="9vj-yh-lEF"/>
+                        <outlet property="playBtn" destination="uzh-v0-oi1" id="xgX-4c-Cpf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="363" y="607"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="MULTIPLES" width="533" height="124"/>
+        <image name="add" width="211" height="101"/>
+        <image name="chalkboard" width="801" height="750"/>
+        <image name="play" width="272" height="268"/>
+    </resources>
 </document>
